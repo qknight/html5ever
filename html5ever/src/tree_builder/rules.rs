@@ -9,13 +9,13 @@
 
 // The tree builder rules, as a single, enormous nested match expression.
 
-use crate::interface::Quirks;
+use crate::interface::NoQuirks;
 use crate::tokenizer::states::{PreData, Rawtext, Rcdata, ScriptData};
 use crate::tokenizer::TagKind::{EndTag, StartTag};
 use crate::tree_builder::tag_sets::*;
 use crate::tree_builder::types::*;
 use crate::tree_builder::{
-    create_element, html_elem, ElemName, NodeOrText::AppendNode, StrTendril, Tag, TreeBuilder,
+    create_element, ElemName, NodeOrText::AppendNode, StrTendril, Tag, TreeBuilder,
     TreeSink,
 };
 use crate::QualName;
@@ -53,7 +53,7 @@ where
                 token => {
                     if !self.opts.iframe_srcdoc {
                         self.unexpected(&token);
-                        self.set_quirks_mode(Quirks);
+                        self.set_quirks_mode(NoQuirks);
                     }
                     Reprocess(BeforeHtml, token)
                 }
@@ -65,11 +65,11 @@ where
                 CharacterTokens(Whitespace, _) => Done,
                 CommentToken(text) => self.append_comment_to_doc(text),
 
-                tag @ <html> => {
-                    self.create_root(tag.attrs);
-                    self.mode.set(BeforeHead);
-                    Done
-                }
+                // tag @ <html> => {
+                //     self.create_root(tag.attrs);
+                //     self.mode.set(BeforeHead);
+                //     Done
+                // }
 
                 </head> </body> </html> </br> => else,
 
@@ -87,7 +87,7 @@ where
                 CharacterTokens(Whitespace, _) => Done,
                 CommentToken(text) => self.append_comment(text),
 
-                <html> => self.step(InBody, token),
+                //<html> => self.step(InBody, token),
 
                 tag @ <head> => {
                     *self.head_elem.borrow_mut() = Some(self.insert_element_for(tag));
@@ -112,7 +112,7 @@ where
                 CharacterTokens(Whitespace, text) => self.append_text(text),
                 CommentToken(text) => self.append_comment(text),
 
-                <html> => self.step(InBody, token),
+               // <html> => self.step(InBody, token),
 
                 tag @ <base> <basefont> <bgsound> <link> <meta> => {
                     // FIXME: handle <meta charset=...> and <meta http-equiv="Content-Type">
@@ -211,7 +211,7 @@ where
 
             //§ parsing-main-inheadnoscript
             InHeadNoscript => match_token!(token {
-                <html> => self.step(InBody, token),
+                // <html> => self.step(InBody, token),
 
                 </noscript> => {
                     self.pop();
@@ -245,7 +245,7 @@ where
                 CharacterTokens(Whitespace, text) => self.append_text(text),
                 CommentToken(text) => self.append_comment(text),
 
-                <html> => self.step(InBody, token),
+                // <html> => self.step(InBody, token),
 
                 tag @ <body> => {
                     self.insert_element_for(tag);
@@ -297,15 +297,15 @@ where
 
                 CommentToken(text) => self.append_comment(text),
 
-                tag @ <html> => {
-                    self.unexpected(&tag);
-                    if !self.in_html_elem_named(local_name!("template")) {
-                        let open_elems = self.open_elems.borrow();
-                        let top = html_elem(&open_elems);
-                        self.sink.add_attrs_if_missing(top, tag.attrs);
-                    }
-                    Done
-                }
+                // tag @ <html> => {
+                //     self.unexpected(&tag);
+                //     if !self.in_html_elem_named(local_name!("template")) {
+                //         let open_elems = self.open_elems.borrow();
+                //         let top = html_elem(&open_elems);
+                //         self.sink.add_attrs_if_missing(top, tag.attrs);
+                //     }
+                //     Done
+                // }
 
                 <base> <basefont> <bgsound> <link> <meta> <noframes>
                   <script> <style> <template> <title> </template> => {
@@ -628,7 +628,7 @@ where
                 }
 
                 tag @ <table> => {
-                    if self.quirks_mode.get() != Quirks {
+                    if self.quirks_mode.get() != NoQuirks {
                         self.close_p_element_in_button_scope();
                     }
                     self.insert_element_for(tag);
@@ -976,7 +976,7 @@ where
                 CharacterTokens(Whitespace, text) => self.append_text(text),
                 CommentToken(text) => self.append_comment(text),
 
-                <html> => self.step(InBody, token),
+                // <html> => self.step(InBody, token),
 
                 tag @ <col> => {
                     self.insert_and_pop_element_for(tag);
@@ -1151,7 +1151,7 @@ where
                 CharacterTokens(_, text) => self.append_text(text),
                 CommentToken(text) => self.append_comment(text),
 
-                <html> => self.step(InBody, token),
+                // <html> => self.step(InBody, token),
 
                 tag @ <option> => {
                     if self.current_node_named(local_name!("option")) {
@@ -1324,7 +1324,7 @@ where
                 CharacterTokens(Whitespace, _) => self.step(InBody, token),
                 CommentToken(text) => self.append_comment_to_html(text),
 
-                <html> => self.step(InBody, token),
+                // <html> => self.step(InBody, token),
 
                 </html> => {
                     if self.is_fragment() {
@@ -1349,7 +1349,7 @@ where
                 CharacterTokens(Whitespace, text) => self.append_text(text),
                 CommentToken(text) => self.append_comment(text),
 
-                <html> => self.step(InBody, token),
+                // <html> => self.step(InBody, token),
 
                 tag @ <frameset> => {
                     self.insert_element_for(tag);
@@ -1391,7 +1391,7 @@ where
                 CharacterTokens(Whitespace, text) => self.append_text(text),
                 CommentToken(text) => self.append_comment(text),
 
-                <html> => self.step(InBody, token),
+                // <html> => self.step(InBody, token),
 
                 </html> => {
                     self.mode.set(AfterAfterFrameset);
@@ -1411,7 +1411,7 @@ where
                 CharacterTokens(Whitespace, _) => self.step(InBody, token),
                 CommentToken(text) => self.append_comment_to_doc(text),
 
-                <html> => self.step(InBody, token),
+                // <html> => self.step(InBody, token),
 
                 EOFToken => self.stop_parsing(),
 
@@ -1427,7 +1427,7 @@ where
                 CharacterTokens(Whitespace, _) => self.step(InBody, token),
                 CommentToken(text) => self.append_comment_to_doc(text),
 
-                <html> => self.step(InBody, token),
+                // <html> => self.step(InBody, token),
 
                 EOFToken => self.stop_parsing(),
 

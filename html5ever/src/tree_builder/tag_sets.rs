@@ -54,7 +54,7 @@ pub(crate) fn full_set(_: ExpandedName) -> bool {
 }
 
 declare_tag_set!(pub html_default_scope =
-    "applet" "caption" "html" "table" "td" "th" "marquee" "object" "template");
+    "applet" "caption"  "table" "td" "th" "marquee" "object" "template");
 
 #[inline(always)]
 pub(crate) fn default_scope(name: ExpandedName) -> bool {
@@ -65,11 +65,11 @@ pub(crate) fn default_scope(name: ExpandedName) -> bool {
 
 declare_tag_set!(pub list_item_scope = [default_scope] + "ol" "ul");
 declare_tag_set!(pub button_scope = [default_scope] + "button");
-declare_tag_set!(pub table_scope = "html" "table" "template");
+declare_tag_set!(pub table_scope =  "table" "template");
 declare_tag_set!(pub select_scope = [full_set] - "optgroup" "option");
 
-declare_tag_set!(pub table_body_context = "tbody" "tfoot" "thead" "template" "html");
-declare_tag_set!(pub table_row_context = "tr" "template" "html");
+declare_tag_set!(pub table_body_context = "tbody" "tfoot" "thead" "template");
+declare_tag_set!(pub table_row_context = "tr" "template" );
 declare_tag_set!(pub td_th = "td" "th");
 
 declare_tag_set!(pub cursory_implied_end =
@@ -84,7 +84,7 @@ declare_tag_set!(pub special_tag =
     "address" "applet" "area" "article" "aside" "base" "basefont" "bgsound" "blockquote" "body"
     "br" "button" "caption" "center" "col" "colgroup" "dd" "details" "dir" "div" "dl" "dt" "embed"
     "fieldset" "figcaption" "figure" "footer" "form" "frame" "frameset" "h1" "h2" "h3" "h4" "h5"
-    "h6" "head" "header" "hgroup" "hr" "html" "iframe" "img" "input" "isindex" "li" "link"
+    "h6" "head" "header" "hgroup" "hr"  "iframe" "img" "input" "isindex" "li" "link"
     "listing" "main" "marquee" "menu" "meta" "nav" "noembed" "noframes" "noscript"
     "object" "ol" "p" "param" "plaintext" "pre" "script" "section" "select" "source" "style"
     "summary" "table" "tbody" "td" "template" "textarea" "tfoot" "th" "thead" "title" "tr" "track"

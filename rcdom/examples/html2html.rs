@@ -30,13 +30,13 @@ fn main() {
     let opts = ParseOpts {
         tree_builder: TreeBuilderOpts {
             drop_doctype: true,
-            parse_pre: false,
+            parse_pre: true,
             ..Default::default()
         },
         ..Default::default()
     };
 
-    let input = "<hello>XML</hello><pre>\n<bad> </bad>text-in  pre</pre><p>asdf</p><script>script</html> magic string</script>";
+    let input = "<hello>XML</hello><pre>\n<bad>   </bad>text-in  pre</pre><p>asdf</p><script>script</html> magic string</script>";
     println!("-------- {} ----------", input);
     let dom = parse_document(RcDom::default(), opts).one(input);
 

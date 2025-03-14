@@ -195,6 +195,7 @@ test!(
 test!(pre_lf_0, "<pre>foo bar</pre>");
 test!(pre_lf_1, "<pre>\nfoo bar</pre>", "<pre>foo bar</pre>");
 test!(pre_lf_2, "<pre>\n\nfoo bar</pre>", "<pre>\nfoo bar</pre>");
+test!(pre_lf_3, "<pre>\n  <p>adf</p>\nfoo\n\tbar</pre>", "<pre>  <p>adf</p>\nfoo\n\tbar</pre>");
 
 test!(textarea_lf_0, "<textarea>foo bar</textarea>");
 test!(
@@ -250,14 +251,17 @@ fn deep_tree() {
     let parser = parse_fragment(
         RcDom::default(),
         ParseOpts::default(),
-        QualName::new(None, ns!(html), local_name!("div")),
+        QualName::new(None, ns!(html), local_name!("")),
         vec![],
     );
-    let src = "<b>".repeat(60_000);
+    let src = "<p>hi</p>";
     let dom = parser.one(src);
     let opts = SerializeOpts::default();
     let mut ret_val = Vec::new();
     let document: SerializableHandle = dom.document.clone().into();
     serialize(&mut ret_val, &document, opts)
         .expect("Writing to a string shouldn't fail (expect on OOM)");
+    let writer_string = String::from_utf8(ret_val).expect("Could not write buffer as string");
+    assert_eq!("", writer_string);
+
 }

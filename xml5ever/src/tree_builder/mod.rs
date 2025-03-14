@@ -253,7 +253,7 @@ where
     #[cfg(not(for_c))]
     fn debug_step(&self, mode: XmlPhase, token: &Token) {
         debug!(
-            "processing {:?} in insertion mode {:?}",
+            "processing {:?} in i1nsertion mode {:?}",
             format!("{:?}", token),
             mode
         );
@@ -387,9 +387,11 @@ where
             #[allow(clippy::unused_unit)]
             match self.step(phase, token) {
                 Done => {
+                    println!("Donex");
                     token = unwrap_or_return!(more_tokens.pop_front(), ());
                 },
                 Reprocess(m, t) => {
+                    println!("Reprocess");
                     self.phase.set(m);
                     token = t;
                 },

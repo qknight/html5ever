@@ -34,7 +34,7 @@ use crate::tokenizer::states::RawKind;
 use crate::tokenizer::TagKind;
 use crate::tree_builder::tag_sets::*;
 use crate::util::str::to_escaped_string;
-use log::{debug, log_enabled, warn, Level};
+
 use mac::format_if;
 use markup5ever::{expanded_name, local_name, namespace_prefix, namespace_url, ns};
 
@@ -158,6 +158,7 @@ where
     /// The tree builder is also a `TokenSink`.
     pub fn new(sink: Sink, opts: TreeBuilderOpts) -> TreeBuilder<Handle, Sink> {
         let doc_handle = sink.get_document();
+        println!("new TreeBuilder");
         TreeBuilder {
             opts,
             sink,
@@ -189,6 +190,7 @@ where
         form_elem: Option<Handle>,
         opts: TreeBuilderOpts,
     ) -> TreeBuilder<Handle, Sink> {
+        println!("new_for_fragment");
         let doc_handle = sink.get_document();
         let context_is_template =
             sink.elem_name(&context_elem).expanded() == expanded_name!(html "template");
@@ -223,8 +225,10 @@ where
         // 6. Append the element root to the Document node created above.
         // 7. Set up the parser's stack of open elements so that it contains just the single element root.
         tb.create_root(vec![]);
+
         // 10. Reset the parser's insertion mode appropriately.
         let old_insertion_mode = tb.reset_insertion_mode();
+
         tb.mode.set(old_insertion_mode);
 
         tb
@@ -326,7 +330,7 @@ where
 
     fn debug_step(&self, mode: InsertionMode, token: &Token) {
         println!(
-            "processing {} in insertion mode {:?}",
+            "processing {} in inserti3on mode {:?}",
             to_escaped_string(token),
             mode
         );
@@ -655,7 +659,7 @@ where
         self.sink.parse_error(format_if!(
             self.opts.exact_errors,
             "Unexpected token",
-            "Unexpected token {} in insertion mode {:?}",
+            "Unexpected token {} in inserti4on mode {:?}",
             to_escaped_string(_thing),
             self.mode.get()
         ));
@@ -1227,7 +1231,7 @@ where
     }
 
     fn foster_parent_in_body(&self, token: Token) -> ProcessResult<Handle> {
-        warn!("foster parenting not implemented");
+        println!("foster parenting not implemented");
         self.foster_parenting.set(true);
         let res = self.step(InBody, token);
         // FIXME: what if res is Reprocess?
@@ -1347,6 +1351,7 @@ where
 
     //§ creating-and-inserting-nodes
     fn create_root(&self, attrs: Vec<Attribute>) {
+        println!("create_root");
         let elem = create_element(
             &self.sink,
             QualName::new(None, ns!(html), local_name!("html")),

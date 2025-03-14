@@ -364,8 +364,8 @@ impl<Sink: TokenSink> Tokenizer<Sink> {
                 match run {
                     ProcessResult::Continue => (),
                     ProcessResult::Suspend => break,
-                    ProcessResult::Script(node) => return { TokenizerResult::Script(node) },
-                    ProcessResult::PreData(node) => return { TokenizerResult::PreData(node) },
+                    ProcessResult::Script(node) => return  TokenizerResult::Script(node) ,
+                    ProcessResult::PreData(node) => return  TokenizerResult::PreData(node) ,
                 }
             }
         } else {

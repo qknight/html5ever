@@ -85,6 +85,8 @@ where
     Sink: TreeSink,
 {
     let mut flags = ElementFlags::default();
+    println!("create_element {:?}", name.local);
+
     match name.expanded() {
         expanded_name!(html "template") => flags.template = true,
         expanded_name!(mathml "annotation-xml") => {
