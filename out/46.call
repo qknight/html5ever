@@ -1,0 +1,115 @@
+command123: Command {
+    program: "rustc",
+    args: [
+        "rustc",
+        "--crate-name",
+        "xml5ever",
+        "--edition=2021",
+        "xml5ever/src/lib.rs",
+        "--error-format=json",
+        "--json=diagnostic-rendered-ansi,artifacts,future-incompat",
+        "--diagnostic-width=209",
+        "--crate-type",
+        "lib",
+        "--emit=dep-info,metadata,link",
+        "-C",
+        "embed-bitcode=no",
+        "-C",
+        "debuginfo=2",
+        "--check-cfg",
+        "cfg(docsrs,test)",
+        "--check-cfg",
+        "cfg(feature, values(\"trace_tokenizer\"))",
+        "-C",
+        "metadata=2f3eb3244bc8bd86",
+        "-C",
+        "extra-filename=-956da530969691aa",
+        "--out-dir",
+        "/home/nixos/html5ever/target/debug/deps",
+        "-C",
+        "incremental=/home/nixos/html5ever/target/debug/incremental",
+        "-L",
+        "dependency=/home/nixos/html5ever/target/debug/deps",
+        "--extern",
+        "log=/home/nixos/html5ever/target/debug/deps/liblog-a0c046c56b014ecb.rmeta",
+        "--extern",
+        "mac=/home/nixos/html5ever/target/debug/deps/libmac-f72a0f1a8d81125b.rmeta",
+        "--extern",
+        "markup5ever=/home/nixos/html5ever/target/debug/deps/libmarkup5ever-f3e7e28897c80712.rmeta",
+    ],
+    env: CommandEnv {
+        clear: false,
+        vars: {
+            "CARGO": Some(
+                "/home/nixos/cargo/target/debug/cargo",
+            ),
+            "CARGO_CRATE_NAME": Some(
+                "xml5ever",
+            ),
+            "CARGO_MAKEFLAGS": Some(
+                "-j --jobserver-fds=8,9 --jobserver-auth=8,9",
+            ),
+            "CARGO_MANIFEST_DIR": Some(
+                "/home/nixos/html5ever/xml5ever",
+            ),
+            "CARGO_MANIFEST_PATH": Some(
+                "/home/nixos/html5ever/xml5ever/Cargo.toml",
+            ),
+            "CARGO_PKG_AUTHORS": Some(
+                "The xml5ever project developers",
+            ),
+            "CARGO_PKG_DESCRIPTION": Some(
+                "Push based streaming parser for XML.",
+            ),
+            "CARGO_PKG_HOMEPAGE": Some(
+                "https://github.com/servo/html5ever/blob/main/xml5ever/README.md",
+            ),
+            "CARGO_PKG_LICENSE": Some(
+                "MIT OR Apache-2.0",
+            ),
+            "CARGO_PKG_LICENSE_FILE": Some(
+                "",
+            ),
+            "CARGO_PKG_NAME": Some(
+                "xml5ever",
+            ),
+            "CARGO_PKG_README": Some(
+                "README.md",
+            ),
+            "CARGO_PKG_REPOSITORY": Some(
+                "https://github.com/servo/html5ever",
+            ),
+            "CARGO_PKG_RUST_VERSION": Some(
+                "1.70.0",
+            ),
+            "CARGO_PKG_VERSION": Some(
+                "0.20.0",
+            ),
+            "CARGO_PKG_VERSION_MAJOR": Some(
+                "0",
+            ),
+            "CARGO_PKG_VERSION_MINOR": Some(
+                "20",
+            ),
+            "CARGO_PKG_VERSION_PATCH": Some(
+                "0",
+            ),
+            "CARGO_PKG_VERSION_PRE": Some(
+                "",
+            ),
+            "CARGO_PRIMARY_PACKAGE": Some(
+                "1",
+            ),
+            "CARGO_SBOM_PATH": Some(
+                "",
+            ),
+            "LD_LIBRARY_PATH": Some(
+                "/home/nixos/html5ever/target/debug/deps",
+            ),
+        },
+    },
+    cwd: Some(
+        "/home/nixos/html5ever",
+    ),
+    create_pidfd: false,
+}

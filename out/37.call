@@ -1,0 +1,121 @@
+command123: Command {
+    program: "rustc",
+    args: [
+        "rustc",
+        "--crate-name",
+        "syn",
+        "--edition=2021",
+        "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-2.0.99/src/lib.rs",
+        "--error-format=json",
+        "--json=diagnostic-rendered-ansi,artifacts,future-incompat",
+        "--diagnostic-width=209",
+        "--crate-type",
+        "lib",
+        "--emit=dep-info,metadata,link",
+        "-C",
+        "embed-bitcode=no",
+        "--cfg",
+        "feature=\"clone-impls\"",
+        "--cfg",
+        "feature=\"default\"",
+        "--cfg",
+        "feature=\"derive\"",
+        "--cfg",
+        "feature=\"full\"",
+        "--cfg",
+        "feature=\"parsing\"",
+        "--cfg",
+        "feature=\"printing\"",
+        "--cfg",
+        "feature=\"proc-macro\"",
+        "--check-cfg",
+        "cfg(docsrs,test)",
+        "--check-cfg",
+        "cfg(feature, values(\"clone-impls\", \"default\", \"derive\", \"extra-traits\", \"fold\", \"full\", \"parsing\", \"printing\", \"proc-macro\", \"test\", \"visit\", \"visit-mut\"))",
+        "-C",
+        "metadata=c56e651616f1cb39",
+        "-C",
+        "extra-filename=-5289b1241fd66725",
+        "--out-dir",
+        "/home/nixos/html5ever/target/debug/deps",
+        "-L",
+        "dependency=/home/nixos/html5ever/target/debug/deps",
+        "--extern",
+        "proc_macro2=/home/nixos/html5ever/target/debug/deps/libproc_macro2-c00d5f2e4566fe3d.rmeta",
+        "--extern",
+        "quote=/home/nixos/html5ever/target/debug/deps/libquote-7726c3a92da25f8b.rmeta",
+        "--extern",
+        "unicode_ident=/home/nixos/html5ever/target/debug/deps/libunicode_ident-5783d1ad3b24ccf6.rmeta",
+        "--cap-lints",
+        "allow",
+    ],
+    env: CommandEnv {
+        clear: false,
+        vars: {
+            "CARGO": Some(
+                "/home/nixos/cargo/target/debug/cargo",
+            ),
+            "CARGO_CRATE_NAME": Some(
+                "syn",
+            ),
+            "CARGO_MAKEFLAGS": Some(
+                "-j --jobserver-fds=8,9 --jobserver-auth=8,9",
+            ),
+            "CARGO_MANIFEST_DIR": Some(
+                "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-2.0.99",
+            ),
+            "CARGO_MANIFEST_PATH": Some(
+                "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-2.0.99/Cargo.toml",
+            ),
+            "CARGO_PKG_AUTHORS": Some(
+                "David Tolnay <dtolnay@gmail.com>",
+            ),
+            "CARGO_PKG_DESCRIPTION": Some(
+                "Parser for Rust source code",
+            ),
+            "CARGO_PKG_HOMEPAGE": Some(
+                "",
+            ),
+            "CARGO_PKG_LICENSE": Some(
+                "MIT OR Apache-2.0",
+            ),
+            "CARGO_PKG_LICENSE_FILE": Some(
+                "",
+            ),
+            "CARGO_PKG_NAME": Some(
+                "syn",
+            ),
+            "CARGO_PKG_README": Some(
+                "README.md",
+            ),
+            "CARGO_PKG_REPOSITORY": Some(
+                "https://github.com/dtolnay/syn",
+            ),
+            "CARGO_PKG_RUST_VERSION": Some(
+                "1.61",
+            ),
+            "CARGO_PKG_VERSION": Some(
+                "2.0.99",
+            ),
+            "CARGO_PKG_VERSION_MAJOR": Some(
+                "2",
+            ),
+            "CARGO_PKG_VERSION_MINOR": Some(
+                "0",
+            ),
+            "CARGO_PKG_VERSION_PATCH": Some(
+                "99",
+            ),
+            "CARGO_PKG_VERSION_PRE": Some(
+                "",
+            ),
+            "LD_LIBRARY_PATH": Some(
+                "/home/nixos/html5ever/target/debug/deps",
+            ),
+        },
+    },
+    cwd: Some(
+        "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-2.0.99",
+    ),
+    create_pidfd: false,
+}

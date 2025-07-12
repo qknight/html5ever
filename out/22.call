@@ -1,0 +1,109 @@
+command123: Command {
+    program: "rustc",
+    args: [
+        "rustc",
+        "--crate-name",
+        "tendril",
+        "--edition=2015",
+        "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tendril-0.4.3/src/lib.rs",
+        "--error-format=json",
+        "--json=diagnostic-rendered-ansi,artifacts,future-incompat",
+        "--diagnostic-width=209",
+        "--crate-type",
+        "lib",
+        "--emit=dep-info,metadata,link",
+        "-C",
+        "embed-bitcode=no",
+        "-C",
+        "debuginfo=2",
+        "--check-cfg",
+        "cfg(docsrs,test)",
+        "--check-cfg",
+        "cfg(feature, values(\"bench\", \"encoding\", \"encoding_rs\"))",
+        "-C",
+        "metadata=03f3962beccaf998",
+        "-C",
+        "extra-filename=-0665232631306e47",
+        "--out-dir",
+        "/home/nixos/html5ever/target/debug/deps",
+        "-L",
+        "dependency=/home/nixos/html5ever/target/debug/deps",
+        "--extern",
+        "futf=/home/nixos/html5ever/target/debug/deps/libfutf-8183acd663cd8e61.rmeta",
+        "--extern",
+        "mac=/home/nixos/html5ever/target/debug/deps/libmac-f72a0f1a8d81125b.rmeta",
+        "--extern",
+        "utf8=/home/nixos/html5ever/target/debug/deps/libutf8-c2c1c2b0d1dc1271.rmeta",
+        "--cap-lints",
+        "allow",
+    ],
+    env: CommandEnv {
+        clear: false,
+        vars: {
+            "CARGO": Some(
+                "/home/nixos/cargo/target/debug/cargo",
+            ),
+            "CARGO_CRATE_NAME": Some(
+                "tendril",
+            ),
+            "CARGO_MAKEFLAGS": Some(
+                "-j --jobserver-fds=8,9 --jobserver-auth=8,9",
+            ),
+            "CARGO_MANIFEST_DIR": Some(
+                "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tendril-0.4.3",
+            ),
+            "CARGO_MANIFEST_PATH": Some(
+                "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tendril-0.4.3/Cargo.toml",
+            ),
+            "CARGO_PKG_AUTHORS": Some(
+                "Keegan McAllister <mcallister.keegan@gmail.com>:Simon Sapin <simon.sapin@exyr.org>:Chris Morgan <me@chrismorgan.info>",
+            ),
+            "CARGO_PKG_DESCRIPTION": Some(
+                "Compact buffer/string type for zero-copy parsing",
+            ),
+            "CARGO_PKG_HOMEPAGE": Some(
+                "",
+            ),
+            "CARGO_PKG_LICENSE": Some(
+                "MIT/Apache-2.0",
+            ),
+            "CARGO_PKG_LICENSE_FILE": Some(
+                "",
+            ),
+            "CARGO_PKG_NAME": Some(
+                "tendril",
+            ),
+            "CARGO_PKG_README": Some(
+                "README.md",
+            ),
+            "CARGO_PKG_REPOSITORY": Some(
+                "https://github.com/servo/tendril",
+            ),
+            "CARGO_PKG_RUST_VERSION": Some(
+                "",
+            ),
+            "CARGO_PKG_VERSION": Some(
+                "0.4.3",
+            ),
+            "CARGO_PKG_VERSION_MAJOR": Some(
+                "0",
+            ),
+            "CARGO_PKG_VERSION_MINOR": Some(
+                "4",
+            ),
+            "CARGO_PKG_VERSION_PATCH": Some(
+                "3",
+            ),
+            "CARGO_PKG_VERSION_PRE": Some(
+                "",
+            ),
+            "LD_LIBRARY_PATH": Some(
+                "/home/nixos/html5ever/target/debug/deps",
+            ),
+        },
+    },
+    cwd: Some(
+        "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tendril-0.4.3",
+    ),
+    create_pidfd: false,
+}

@@ -1,0 +1,109 @@
+command123: Command {
+    program: "rustc",
+    args: [
+        "rustc",
+        "--crate-name",
+        "phf_shared",
+        "--edition=2021",
+        "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/phf_shared-0.11.3/src/lib.rs",
+        "--error-format=json",
+        "--json=diagnostic-rendered-ansi,artifacts,future-incompat",
+        "--diagnostic-width=209",
+        "--crate-type",
+        "lib",
+        "--emit=dep-info,metadata,link",
+        "-C",
+        "embed-bitcode=no",
+        "-C",
+        "debuginfo=2",
+        "--cfg",
+        "feature=\"default\"",
+        "--cfg",
+        "feature=\"std\"",
+        "--check-cfg",
+        "cfg(docsrs,test)",
+        "--check-cfg",
+        "cfg(feature, values(\"default\", \"std\", \"uncased\", \"unicase\"))",
+        "-C",
+        "metadata=f9b5c27997035d79",
+        "-C",
+        "extra-filename=-ec50c9c17879817d",
+        "--out-dir",
+        "/home/nixos/html5ever/target/debug/deps",
+        "-L",
+        "dependency=/home/nixos/html5ever/target/debug/deps",
+        "--extern",
+        "siphasher=/home/nixos/html5ever/target/debug/deps/libsiphasher-d737ba0dfb65bc63.rmeta",
+        "--cap-lints",
+        "allow",
+    ],
+    env: CommandEnv {
+        clear: false,
+        vars: {
+            "CARGO": Some(
+                "/home/nixos/cargo/target/debug/cargo",
+            ),
+            "CARGO_CRATE_NAME": Some(
+                "phf_shared",
+            ),
+            "CARGO_MAKEFLAGS": Some(
+                "-j --jobserver-fds=8,9 --jobserver-auth=8,9",
+            ),
+            "CARGO_MANIFEST_DIR": Some(
+                "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/phf_shared-0.11.3",
+            ),
+            "CARGO_MANIFEST_PATH": Some(
+                "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/phf_shared-0.11.3/Cargo.toml",
+            ),
+            "CARGO_PKG_AUTHORS": Some(
+                "Steven Fackler <sfackler@gmail.com>",
+            ),
+            "CARGO_PKG_DESCRIPTION": Some(
+                "Support code shared by PHF libraries",
+            ),
+            "CARGO_PKG_HOMEPAGE": Some(
+                "",
+            ),
+            "CARGO_PKG_LICENSE": Some(
+                "MIT",
+            ),
+            "CARGO_PKG_LICENSE_FILE": Some(
+                "",
+            ),
+            "CARGO_PKG_NAME": Some(
+                "phf_shared",
+            ),
+            "CARGO_PKG_README": Some(
+                "README.md",
+            ),
+            "CARGO_PKG_REPOSITORY": Some(
+                "https://github.com/rust-phf/rust-phf",
+            ),
+            "CARGO_PKG_RUST_VERSION": Some(
+                "1.61",
+            ),
+            "CARGO_PKG_VERSION": Some(
+                "0.11.3",
+            ),
+            "CARGO_PKG_VERSION_MAJOR": Some(
+                "0",
+            ),
+            "CARGO_PKG_VERSION_MINOR": Some(
+                "11",
+            ),
+            "CARGO_PKG_VERSION_PATCH": Some(
+                "3",
+            ),
+            "CARGO_PKG_VERSION_PRE": Some(
+                "",
+            ),
+            "LD_LIBRARY_PATH": Some(
+                "/home/nixos/html5ever/target/debug/deps",
+            ),
+        },
+    },
+    cwd: Some(
+        "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/phf_shared-0.11.3",
+    ),
+    create_pidfd: false,
+}

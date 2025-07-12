@@ -1,0 +1,138 @@
+command123: Command {
+    program: "rustc",
+    args: [
+        "rustc",
+        "--crate-name",
+        "serde",
+        "--edition=2018",
+        "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.218/src/lib.rs",
+        "--error-format=json",
+        "--json=diagnostic-rendered-ansi,artifacts,future-incompat",
+        "--diagnostic-width=209",
+        "--crate-type",
+        "lib",
+        "--emit=dep-info,metadata,link",
+        "-C",
+        "embed-bitcode=no",
+        "-C",
+        "debuginfo=2",
+        "--cfg",
+        "feature=\"default\"",
+        "--cfg",
+        "feature=\"std\"",
+        "--check-cfg",
+        "cfg(docsrs,test)",
+        "--check-cfg",
+        "cfg(feature, values(\"alloc\", \"default\", \"derive\", \"rc\", \"serde_derive\", \"std\", \"unstable\"))",
+        "-C",
+        "metadata=089207e929eb73dc",
+        "-C",
+        "extra-filename=-60d80c2d94243f7d",
+        "--out-dir",
+        "/home/nixos/html5ever/target/debug/deps",
+        "-L",
+        "dependency=/home/nixos/html5ever/target/debug/deps",
+        "--cap-lints",
+        "allow",
+        "--check-cfg",
+        "cfg(no_core_cstr)",
+        "--check-cfg",
+        "cfg(no_core_error)",
+        "--check-cfg",
+        "cfg(no_core_net)",
+        "--check-cfg",
+        "cfg(no_core_num_saturating)",
+        "--check-cfg",
+        "cfg(no_core_try_from)",
+        "--check-cfg",
+        "cfg(no_diagnostic_namespace)",
+        "--check-cfg",
+        "cfg(no_float_copysign)",
+        "--check-cfg",
+        "cfg(no_num_nonzero_signed)",
+        "--check-cfg",
+        "cfg(no_relaxed_trait_bounds)",
+        "--check-cfg",
+        "cfg(no_serde_derive)",
+        "--check-cfg",
+        "cfg(no_std_atomic)",
+        "--check-cfg",
+        "cfg(no_std_atomic64)",
+        "--check-cfg",
+        "cfg(no_systemtime_checked_add)",
+        "--check-cfg",
+        "cfg(no_target_has_atomic)",
+    ],
+    env: CommandEnv {
+        clear: false,
+        vars: {
+            "CARGO": Some(
+                "/home/nixos/cargo/target/debug/cargo",
+            ),
+            "CARGO_CRATE_NAME": Some(
+                "serde",
+            ),
+            "CARGO_MAKEFLAGS": Some(
+                "-j --jobserver-fds=8,9 --jobserver-auth=8,9",
+            ),
+            "CARGO_MANIFEST_DIR": Some(
+                "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.218",
+            ),
+            "CARGO_MANIFEST_PATH": Some(
+                "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.218/Cargo.toml",
+            ),
+            "CARGO_PKG_AUTHORS": Some(
+                "Erick Tryzelaar <erick.tryzelaar@gmail.com>:David Tolnay <dtolnay@gmail.com>",
+            ),
+            "CARGO_PKG_DESCRIPTION": Some(
+                "A generic serialization/deserialization framework",
+            ),
+            "CARGO_PKG_HOMEPAGE": Some(
+                "https://serde.rs",
+            ),
+            "CARGO_PKG_LICENSE": Some(
+                "MIT OR Apache-2.0",
+            ),
+            "CARGO_PKG_LICENSE_FILE": Some(
+                "",
+            ),
+            "CARGO_PKG_NAME": Some(
+                "serde",
+            ),
+            "CARGO_PKG_README": Some(
+                "crates-io.md",
+            ),
+            "CARGO_PKG_REPOSITORY": Some(
+                "https://github.com/serde-rs/serde",
+            ),
+            "CARGO_PKG_RUST_VERSION": Some(
+                "1.31",
+            ),
+            "CARGO_PKG_VERSION": Some(
+                "1.0.218",
+            ),
+            "CARGO_PKG_VERSION_MAJOR": Some(
+                "1",
+            ),
+            "CARGO_PKG_VERSION_MINOR": Some(
+                "0",
+            ),
+            "CARGO_PKG_VERSION_PATCH": Some(
+                "218",
+            ),
+            "CARGO_PKG_VERSION_PRE": Some(
+                "",
+            ),
+            "LD_LIBRARY_PATH": Some(
+                "/home/nixos/html5ever/target/debug/deps",
+            ),
+            "OUT_DIR": Some(
+                "/home/nixos/html5ever/target/debug/build/serde-679977d4f26d90fb/out",
+            ),
+        },
+    },
+    cwd: Some(
+        "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.218",
+    ),
+    create_pidfd: false,
+}

@@ -1,0 +1,117 @@
+command123: Command {
+    program: "rustc",
+    args: [
+        "rustc",
+        "--crate-name",
+        "html5ever",
+        "--edition=2021",
+        "html5ever/src/lib.rs",
+        "--error-format=json",
+        "--json=diagnostic-rendered-ansi,artifacts,future-incompat",
+        "--diagnostic-width=209",
+        "--crate-type",
+        "lib",
+        "--emit=dep-info,metadata,link",
+        "-C",
+        "embed-bitcode=no",
+        "-C",
+        "debuginfo=2",
+        "--check-cfg",
+        "cfg(docsrs,test)",
+        "--check-cfg",
+        "cfg(feature, values(\"trace_tokenizer\"))",
+        "-C",
+        "metadata=98f05e760912c547",
+        "-C",
+        "extra-filename=-e934033214728fd8",
+        "--out-dir",
+        "/home/nixos/html5ever/target/debug/deps",
+        "-C",
+        "incremental=/home/nixos/html5ever/target/debug/incremental",
+        "-L",
+        "dependency=/home/nixos/html5ever/target/debug/deps",
+        "--extern",
+        "log=/home/nixos/html5ever/target/debug/deps/liblog-a0c046c56b014ecb.rmeta",
+        "--extern",
+        "mac=/home/nixos/html5ever/target/debug/deps/libmac-f72a0f1a8d81125b.rmeta",
+        "--extern",
+        "markup5ever=/home/nixos/html5ever/target/debug/deps/libmarkup5ever-f3e7e28897c80712.rmeta",
+        "--extern",
+        "match_token=/home/nixos/html5ever/target/debug/deps/libmatch_token-dd637fcffe177fc3.so",
+    ],
+    env: CommandEnv {
+        clear: false,
+        vars: {
+            "CARGO": Some(
+                "/home/nixos/cargo/target/debug/cargo",
+            ),
+            "CARGO_CRATE_NAME": Some(
+                "html5ever",
+            ),
+            "CARGO_MAKEFLAGS": Some(
+                "-j --jobserver-fds=8,9 --jobserver-auth=8,9",
+            ),
+            "CARGO_MANIFEST_DIR": Some(
+                "/home/nixos/html5ever/html5ever",
+            ),
+            "CARGO_MANIFEST_PATH": Some(
+                "/home/nixos/html5ever/html5ever/Cargo.toml",
+            ),
+            "CARGO_PKG_AUTHORS": Some(
+                "The html5ever Project Developers",
+            ),
+            "CARGO_PKG_DESCRIPTION": Some(
+                "High-performance browser-grade HTML5 parser",
+            ),
+            "CARGO_PKG_HOMEPAGE": Some(
+                "",
+            ),
+            "CARGO_PKG_LICENSE": Some(
+                "MIT OR Apache-2.0",
+            ),
+            "CARGO_PKG_LICENSE_FILE": Some(
+                "",
+            ),
+            "CARGO_PKG_NAME": Some(
+                "html5ever",
+            ),
+            "CARGO_PKG_README": Some(
+                "../README.md",
+            ),
+            "CARGO_PKG_REPOSITORY": Some(
+                "https://github.com/servo/html5ever",
+            ),
+            "CARGO_PKG_RUST_VERSION": Some(
+                "1.70.0",
+            ),
+            "CARGO_PKG_VERSION": Some(
+                "0.29.1",
+            ),
+            "CARGO_PKG_VERSION_MAJOR": Some(
+                "0",
+            ),
+            "CARGO_PKG_VERSION_MINOR": Some(
+                "29",
+            ),
+            "CARGO_PKG_VERSION_PATCH": Some(
+                "1",
+            ),
+            "CARGO_PKG_VERSION_PRE": Some(
+                "",
+            ),
+            "CARGO_PRIMARY_PACKAGE": Some(
+                "1",
+            ),
+            "CARGO_SBOM_PATH": Some(
+                "",
+            ),
+            "LD_LIBRARY_PATH": Some(
+                "/home/nixos/html5ever/target/debug/deps",
+            ),
+        },
+    },
+    cwd: Some(
+        "/home/nixos/html5ever",
+    ),
+    create_pidfd: false,
+}

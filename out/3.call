@@ -1,0 +1,8 @@
+command123: Command {
+    program: "rustc",
+    args: [
+        "rustc",
+        "-vV",
+    ],
+    create_pidfd: false,
+}

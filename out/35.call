@@ -1,0 +1,115 @@
+command123: Command {
+
+    program: "rustc",
+    args: [
+        "rustc",
+        "--crate-name",
+        "lock_api",
+        "--edition=2021",
+        "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/lock_api-0.4.12/src/lib.rs",
+        "--error-format=json",
+        "--json=diagnostic-rendered-ansi,artifacts,future-incompat",
+        "--diagnostic-width=209",
+        "--crate-type",
+        "lib",
+        "--emit=dep-info,metadata,link",
+        "-C",
+        "embed-bitcode=no",
+        "-C",
+        "debuginfo=2",
+        "--cfg",
+        "feature=\"atomic_usize\"",
+        "--cfg",
+        "feature=\"default\"",
+        "--check-cfg",
+        "cfg(docsrs,test)",
+        "--check-cfg",
+        "cfg(feature, values(\"arc_lock\", \"atomic_usize\", \"default\", \"nightly\", \"owning_ref\", \"serde\"))",
+        "-C",
+        "metadata=24a451d43e84e0ca",
+        "-C",
+        "extra-filename=-5446635aac5ff34d",
+        "--out-dir",
+        "/home/nixos/html5ever/target/debug/deps",
+        "-L",
+        "dependency=/home/nixos/html5ever/target/debug/deps",
+        "--extern",
+        "scopeguard=/home/nixos/html5ever/target/debug/deps/libscopeguard-faaabf9a734bce39.rmeta",
+        "--cap-lints",
+        "allow",
+        "--cfg",
+        "has_const_fn_trait_bound",
+    ],
+    env: CommandEnv {
+        clear: false,
+        vars: {
+            "CARGO": Some(
+                "/home/nixos/cargo/target/debug/cargo",
+            ),
+            "CARGO_CRATE_NAME": Some(
+                "lock_api",
+            ),
+            "CARGO_MAKEFLAGS": Some(
+                "-j --jobserver-fds=8,9 --jobserver-auth=8,9",
+            ),
+            "CARGO_MANIFEST_DIR": Some(
+                "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/lock_api-0.4.12",
+            ),
+            "CARGO_MANIFEST_PATH": Some(
+                "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/lock_api-0.4.12/Cargo.toml",
+            ),
+            "CARGO_PKG_AUTHORS": Some(
+                "Amanieu d\'Antras <amanieu@gmail.com>",
+            ),
+            "CARGO_PKG_DESCRIPTION": Some(
+                "Wrappers to create fully-featured Mutex and RwLock types. Compatible with no_std.",
+            ),
+            "CARGO_PKG_HOMEPAGE": Some(
+                "",
+            ),
+            "CARGO_PKG_LICENSE": Some(
+                "MIT OR Apache-2.0",
+            ),
+            "CARGO_PKG_LICENSE_FILE": Some(
+                "",
+            ),
+            "CARGO_PKG_NAME": Some(
+                "lock_api",
+            ),
+            "CARGO_PKG_README": Some(
+                "",
+            ),
+            "CARGO_PKG_REPOSITORY": Some(
+                "https://github.com/Amanieu/parking_lot",
+            ),
+            "CARGO_PKG_RUST_VERSION": Some(
+                "1.56.0",
+            ),
+            "CARGO_PKG_VERSION": Some(
+                "0.4.12",
+            ),
+            "CARGO_PKG_VERSION_MAJOR": Some(
+                "0",
+            ),
+            "CARGO_PKG_VERSION_MINOR": Some(
+                "4",
+            ),
+            "CARGO_PKG_VERSION_PATCH": Some(
+                "12",
+            ),
+            "CARGO_PKG_VERSION_PRE": Some(
+                "",
+            ),
+            "LD_LIBRARY_PATH": Some(
+                "/home/nixos/html5ever/target/debug/deps",
+            ),
+            "OUT_DIR": Some(
+                "/home/nixos/html5ever/target/debug/build/lock_api-7484fdb636053cb2/out",
+            ),
+        },
+    },
+    cwd: Some(
+        "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/lock_api-0.4.12",
+    ),
+    create_pidfd: false,
+}

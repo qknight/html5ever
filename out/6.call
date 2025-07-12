@@ -1,0 +1,101 @@
+command123: Command {
+    program: "rustc",
+    args: [
+        "rustc",
+        "--crate-name",
+        "unicode_ident",
+        "--edition=2018",
+        "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-ident-1.0.18/src/lib.rs",
+        "--error-format=json",
+        "--json=diagnostic-rendered-ansi,artifacts,future-incompat",
+        "--diagnostic-width=209",
+        "--crate-type",
+        "lib",
+        "--emit=dep-info,metadata,link",
+        "-C",
+        "embed-bitcode=no",
+        "--check-cfg",
+        "cfg(docsrs,test)",
+        "--check-cfg",
+        "cfg(feature, values())",
+        "-C",
+        "metadata=5352a2af0a57c5aa",
+        "-C",
+        "extra-filename=-5783d1ad3b24ccf6",
+        "--out-dir",
+        "/home/nixos/html5ever/target/debug/deps",
+        "-L",
+        "dependency=/home/nixos/html5ever/target/debug/deps",
+        "--cap-lints",
+        "allow",
+    ],
+    env: CommandEnv {
+        clear: false,
+        vars: {
+            "CARGO": Some(
+                "/home/nixos/cargo/target/debug/cargo",
+            ),
+            "CARGO_CRATE_NAME": Some(
+                "unicode_ident",
+            ),
+            "CARGO_MAKEFLAGS": Some(
+                "-j --jobserver-fds=8,9 --jobserver-auth=8,9",
+            ),
+            "CARGO_MANIFEST_DIR": Some(
+                "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-ident-1.0.18",
+            ),
+            "CARGO_MANIFEST_PATH": Some(
+                "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-ident-1.0.18/Cargo.toml",
+            ),
+            "CARGO_PKG_AUTHORS": Some(
+                "David Tolnay <dtolnay@gmail.com>",
+            ),
+            "CARGO_PKG_DESCRIPTION": Some(
+                "Determine whether characters have the XID_Start or XID_Continue properties according to Unicode Standard Annex #31",
+            ),
+            "CARGO_PKG_HOMEPAGE": Some(
+                "",
+            ),
+            "CARGO_PKG_LICENSE": Some(
+                "(MIT OR Apache-2.0) AND Unicode-3.0",
+            ),
+            "CARGO_PKG_LICENSE_FILE": Some(
+                "",
+            ),
+            "CARGO_PKG_NAME": Some(
+                "unicode-ident",
+            ),
+            "CARGO_PKG_README": Some(
+                "README.md",
+            ),
+            "CARGO_PKG_REPOSITORY": Some(
+                "https://github.com/dtolnay/unicode-ident",
+            ),
+            "CARGO_PKG_RUST_VERSION": Some(
+                "1.31",
+            ),
+            "CARGO_PKG_VERSION": Some(
+                "1.0.18",
+            ),
+            "CARGO_PKG_VERSION_MAJOR": Some(
+                "1",
+            ),
+            "CARGO_PKG_VERSION_MINOR": Some(
+                "0",
+            ),
+            "CARGO_PKG_VERSION_PATCH": Some(
+                "18",
+            ),
+            "CARGO_PKG_VERSION_PRE": Some(
+                "",
+            ),
+            "LD_LIBRARY_PATH": Some(
+                "/home/nixos/html5ever/target/debug/deps",
+            ),
+        },
+    },
+    cwd: Some(
+        "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-ident-1.0.18",
+    ),
+    create_pidfd: false,
+}

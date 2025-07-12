@@ -1,0 +1,117 @@
+command123: Command {
+    program: "rustc",
+    args: [
+        "rustc",
+        "--crate-name",
+        "markup5ever_rcdom",
+        "--edition=2021",
+        "rcdom/lib.rs",
+        "--error-format=json",
+        "--json=diagnostic-rendered-ansi,artifacts,future-incompat",
+        "--diagnostic-width=209",
+        "--crate-type",
+        "lib",
+        "--emit=dep-info,metadata,link",
+        "-C",
+        "embed-bitcode=no",
+        "-C",
+        "debuginfo=2",
+        "--check-cfg",
+        "cfg(docsrs,test)",
+        "--check-cfg",
+        "cfg(feature, values())",
+        "-C",
+        "metadata=0d7709b460f87629",
+        "-C",
+        "extra-filename=-34bccddc6edda5fc",
+        "--out-dir",
+        "/home/nixos/html5ever/target/debug/deps",
+        "-C",
+        "incremental=/home/nixos/html5ever/target/debug/incremental",
+        "-L",
+        "dependency=/home/nixos/html5ever/target/debug/deps",
+        "--extern",
+        "html5ever=/home/nixos/html5ever/target/debug/deps/libhtml5ever-e934033214728fd8.rmeta",
+        "--extern",
+        "markup5ever=/home/nixos/html5ever/target/debug/deps/libmarkup5ever-f3e7e28897c80712.rmeta",
+        "--extern",
+        "tendril=/home/nixos/html5ever/target/debug/deps/libtendril-0665232631306e47.rmeta",
+        "--extern",
+        "xml5ever=/home/nixos/html5ever/target/debug/deps/libxml5ever-956da530969691aa.rmeta",
+    ],
+    env: CommandEnv {
+        clear: false,
+        vars: {
+            "CARGO": Some(
+                "/home/nixos/cargo/target/debug/cargo",
+            ),
+            "CARGO_CRATE_NAME": Some(
+                "markup5ever_rcdom",
+            ),
+            "CARGO_MAKEFLAGS": Some(
+                "-j --jobserver-fds=8,9 --jobserver-auth=8,9",
+            ),
+            "CARGO_MANIFEST_DIR": Some(
+                "/home/nixos/html5ever/rcdom",
+            ),
+            "CARGO_MANIFEST_PATH": Some(
+                "/home/nixos/html5ever/rcdom/Cargo.toml",
+            ),
+            "CARGO_PKG_AUTHORS": Some(
+                "The html5ever Project Developers",
+            ),
+            "CARGO_PKG_DESCRIPTION": Some(
+                "Basic, unsupported DOM structure for use by tests in html5ever/xml5ever",
+            ),
+            "CARGO_PKG_HOMEPAGE": Some(
+                "",
+            ),
+            "CARGO_PKG_LICENSE": Some(
+                "MIT OR Apache-2.0",
+            ),
+            "CARGO_PKG_LICENSE_FILE": Some(
+                "",
+            ),
+            "CARGO_PKG_NAME": Some(
+                "markup5ever_rcdom",
+            ),
+            "CARGO_PKG_README": Some(
+                "README.md",
+            ),
+            "CARGO_PKG_REPOSITORY": Some(
+                "https://github.com/servo/html5ever",
+            ),
+            "CARGO_PKG_RUST_VERSION": Some(
+                "",
+            ),
+            "CARGO_PKG_VERSION": Some(
+                "0.3.0",
+            ),
+            "CARGO_PKG_VERSION_MAJOR": Some(
+                "0",
+            ),
+            "CARGO_PKG_VERSION_MINOR": Some(
+                "3",
+            ),
+            "CARGO_PKG_VERSION_PATCH": Some(
+                "0",
+            ),
+            "CARGO_PKG_VERSION_PRE": Some(
+                "",
+            ),
+            "CARGO_PRIMARY_PACKAGE": Some(
+                "1",
+            ),
+            "CARGO_SBOM_PATH": Some(
+                "",
+            ),
+            "LD_LIBRARY_PATH": Some(
+                "/home/nixos/html5ever/target/debug/deps",
+            ),
+        },
+    },
+    cwd: Some(
+        "/home/nixos/html5ever",
+    ),
+    create_pidfd: false,
+}

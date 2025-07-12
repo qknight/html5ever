@@ -1,0 +1,119 @@
+command123: Command {
+    program: "rustc",
+    args: [
+        "rustc",
+        "--crate-name",
+        "match_token",
+        "--edition=2021",
+        "match_token/src/lib.rs",
+        "--error-format=json",
+        "--json=diagnostic-rendered-ansi,artifacts,future-incompat",
+        "--diagnostic-width=209",
+        "--crate-type",
+        "proc-macro",
+        "--emit=dep-info,link",
+        "-C",
+        "prefer-dynamic",
+        "-C",
+        "embed-bitcode=no",
+        "-C",
+        "debuginfo=2",
+        "--check-cfg",
+        "cfg(docsrs,test)",
+        "--check-cfg",
+        "cfg(feature, values())",
+        "-C",
+        "metadata=81130888085c99bc",
+        "-C",
+        "extra-filename=-dd637fcffe177fc3",
+        "--out-dir",
+        "/home/nixos/html5ever/target/debug/deps",
+        "-C",
+        "incremental=/home/nixos/html5ever/target/debug/incremental",
+        "-L",
+        "dependency=/home/nixos/html5ever/target/debug/deps",
+        "--extern",
+        "proc_macro2=/home/nixos/html5ever/target/debug/deps/libproc_macro2-c00d5f2e4566fe3d.rlib",
+        "--extern",
+        "quote=/home/nixos/html5ever/target/debug/deps/libquote-7726c3a92da25f8b.rlib",
+        "--extern",
+        "syn=/home/nixos/html5ever/target/debug/deps/libsyn-5289b1241fd66725.rlib",
+        "--extern",
+        "proc_macro",
+    ],
+    env: CommandEnv {
+        clear: false,
+        vars: {
+            "CARGO": Some(
+                "/home/nixos/cargo/target/debug/cargo",
+            ),
+            "CARGO_CRATE_NAME": Some(
+                "match_token",
+            ),
+            "CARGO_MAKEFLAGS": Some(
+                "-j --jobserver-fds=8,9 --jobserver-auth=8,9",
+            ),
+            "CARGO_MANIFEST_DIR": Some(
+                "/home/nixos/html5ever/match_token",
+            ),
+            "CARGO_MANIFEST_PATH": Some(
+                "/home/nixos/html5ever/match_token/Cargo.toml",
+            ),
+            "CARGO_PKG_AUTHORS": Some(
+                "",
+            ),
+            "CARGO_PKG_DESCRIPTION": Some(
+                "Procedural macro for html5ever.",
+            ),
+            "CARGO_PKG_HOMEPAGE": Some(
+                "",
+            ),
+            "CARGO_PKG_LICENSE": Some(
+                "MIT OR Apache-2.0",
+            ),
+            "CARGO_PKG_LICENSE_FILE": Some(
+                "",
+            ),
+            "CARGO_PKG_NAME": Some(
+                "match_token",
+            ),
+            "CARGO_PKG_README": Some(
+                "",
+            ),
+            "CARGO_PKG_REPOSITORY": Some(
+                "https://github.com/servo/html5ever",
+            ),
+            "CARGO_PKG_RUST_VERSION": Some(
+                "",
+            ),
+            "CARGO_PKG_VERSION": Some(
+                "0.1.0",
+            ),
+            "CARGO_PKG_VERSION_MAJOR": Some(
+                "0",
+            ),
+            "CARGO_PKG_VERSION_MINOR": Some(
+                "1",
+            ),
+            "CARGO_PKG_VERSION_PATCH": Some(
+                "0",
+            ),
+            "CARGO_PKG_VERSION_PRE": Some(
+                "",
+            ),
+            "CARGO_PRIMARY_PACKAGE": Some(
+                "1",
+            ),
+            "CARGO_SBOM_PATH": Some(
+                "",
+            ),
+            "LD_LIBRARY_PATH": Some(
+                "/home/nixos/html5ever/target/debug/deps",
+            ),
+        },
+    },
+    cwd: Some(
+        "/home/nixos/html5ever",
+    ),
+    create_pidfd: false,
+}
